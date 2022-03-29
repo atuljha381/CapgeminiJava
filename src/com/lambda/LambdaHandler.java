@@ -15,7 +15,9 @@ public class LambdaHandler {
 
 //		emps.forEach(e -> System.out.println(e.getId() + " " + e.getName()));
 
-		emps.stream().filter(e -> e.getName().contains("n"))
-				.forEach(e -> System.out.println(e.getName() + " " + e.getJob()));
+//		emps.stream().filter(e -> e.getName().contains("n"))
+//				.forEach(e -> System.out.println(e.getName() + " " + e.getJob()));
+
+		emps.stream().filter(e -> e.getId() >= 101 && e.getId() <= 103).forEach(Employee::showEmp);
 	}
 }
