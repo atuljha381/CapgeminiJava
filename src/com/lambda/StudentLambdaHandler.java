@@ -20,8 +20,8 @@ public class StudentLambdaHandler {
 
 		st = students.stream().min((s1, s2) -> s1.getSub1() > s2.getSub1() ? 1 : -1).get();
 		System.out.println("Lowest Marks in Sub1: " + st.getSname() + " " + st.getSub1());
-//
-//		students.stream().filter(s -> s.getSub1() > 60).forEach(s -> s.show());
+
+		students.stream().filter(s -> s.getSub1() > 60).forEach(s -> s.show());
 
 		students.stream().peek(Student::show).map(s -> (s.getSub1() + s.getSub2()))
 				.forEach(s -> System.out.println("Total Marks: " + s));

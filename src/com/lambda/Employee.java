@@ -57,6 +57,7 @@ public class Employee implements Comparable<Employee> {
 	public void showEmp() {
 		System.out.println("Employee ID:" + getId());
 		System.out.println("Employee Name: " + getName());
+		System.out.println("Employee Salary: " + getSal());
 	}
 
 }
