@@ -1,7 +1,9 @@
 package com.lambda;
 
 import java.util.ArrayList;
+import java.util.function.DoubleFunction;
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class LambdaHandler4 {
 	public static void main(String[] args) {
@@ -16,5 +18,12 @@ public class LambdaHandler4 {
 
 		Function<Employee, String> getName = e -> e.getName();
 		System.out.println("First record name=" + getName.apply(emps.get(0)));
+
+		Supplier<Employee> supply = () -> emps.get(2);
+		System.out.println(supply.get());
+
+		DoubleFunction<Double> empsal = (sal) -> sal * 12;
+		System.out.println("Salary of employee=" + supply.get().getSal() + " Annual Salary="
+				+ empsal.apply(supply.get().getSal()));
 	}
 }
