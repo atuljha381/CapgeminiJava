@@ -1,24 +1,19 @@
 package com.lambda;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.function.Consumer;
 import java.util.function.Predicate;
 import java.util.stream.Stream;
 
-public class LambdaHandler2 {
+public class LambdaHandler3 {
 
-	public static void showRecords(Predicate<Employee> prd, Consumer<Employee> con, ArrayList<Employee> emps) {
-		emps.stream().filter(prd).forEach(con);
+	public static Stream<Employee> getStream(ArrayList<Employee> emps) {
+		return emps.stream();
 	}
 
-	public static Stream<Employee> recs(List<Predicate<Employee>> prds, ArrayList<Employee> emps) {
-		Stream<Employee> strm = emps.stream();
-		for (Predicate<Employee> pr : prds) {
-			strm.filter(pr);
-		}
-		return strm;
+	public static Stream<Employee> getStream(Predicate<Employee> cond, Consumer<Employee> output,
+			ArrayList<Employee> emps) {
+		return emps.stream().filter(cond);
 	}
 
 	public static void main(String[] args) {
@@ -28,6 +23,7 @@ public class LambdaHandler2 {
 		emps.add(new Employee(103, "Deepa", "Analyst", 40000));
 		emps.add(new Employee(104, "Ashwin", "Clerk", 13000));
 		emps.add(new Employee(105, "Irfan", "Clerk", 12000));
+		Stream<Employee> strm = getStream(emps);
 
 		Predicate<Employee> cond1 = e -> e.getJob().equalsIgnoreCase("clerk");
 		Predicate<Employee> cond2 = e -> e.getSal() >= 30000;
@@ -36,12 +32,10 @@ public class LambdaHandler2 {
 		Consumer<Employee> output1 = Employee::showEmp;
 		Consumer<Employee> output2 = e -> System.out.println(e.getId() + " " + e.getName());
 
-//		emps.stream().filter(cond3).forEach(Employee::showEmp);
-//		showRecords(cond2, output2, emps);
-		System.out.println("-----------------------------------------------------------------------");
-//		emps.stream().filter(cond3).filter(cond1).forEach(output2);
+		Stream<Employee> strm1 = getStream(cond1, output1, emps);
 
-		List<Predicate<Employee>> lst = Arrays.asList(cond1, cond2);
-		recs(lst, emps).forEach(output1);
+//		strm.filter(cond1).peek(output1).map(e -> e.getSal() * 12).forEach(e -> System.out.println(e));
+		strm1.forEach(output2);
 	}
+
 }
