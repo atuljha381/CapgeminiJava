@@ -43,6 +43,13 @@ public class Employee implements Comparable<Employee> {
 	public void setSal(double sal) {
 		this.sal = sal;
 	}
+	
+	
+
+	@Override
+	public String toString() {
+		return "Employee [id=" + id + ", name=" + name + ", job=" + job + ", sal=" + sal + "]";
+	}
 
 	@Override
 	public int compareTo(Employee o) {
