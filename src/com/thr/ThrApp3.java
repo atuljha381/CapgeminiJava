@@ -1,12 +1,14 @@
 package com.thr;
 
 public class ThrApp3 extends Thread {
+	private int delayTime;
 
-	public ThrApp3(String name) {
+	public ThrApp3(String name, int delayTime) {
 		System.out.println("Is thread Activated " + (isAlive() ? "YES" : "NO"));
 		start();
 		setName(name);
 		System.out.println("Is thread Activated " + (isAlive() ? "YES" : "NO"));
+		this.delayTime = delayTime;
 	}
 
 	@Override
@@ -25,7 +27,8 @@ public class ThrApp3 extends Thread {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		new ThrApp3("MyMember");
+		ThrApp3 thr1 = new ThrApp3("MyMember", 1000);
+		ThrApp3 thr2 = new ThrApp3("Process2", 1500);
 	}
 
 }
