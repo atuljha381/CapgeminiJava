@@ -1,0 +1,5 @@
+1,HP Laptop,25000
+2,Dell Laptop,30000
+3,Lenovo Laptop,28000
+4,Sony Laptop,28000
+5,Apple Laptop,90000
