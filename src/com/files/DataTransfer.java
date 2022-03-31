@@ -28,6 +28,7 @@ public class DataTransfer {
 			Consumer<Product> output1 = Product::showProd;
 
 			prodList.stream().filter(cond1).forEach(output1);
+
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
