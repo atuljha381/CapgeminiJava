@@ -1,6 +1,7 @@
 package com.thr;
 
 public class ThrApp3 extends Thread {
+	@SuppressWarnings("unused")
 	private int delayTime;
 
 	public ThrApp3(String name, int delayTime) {

@@ -5,7 +5,7 @@ class Thr1 extends Thread {
 	public void run() {
 		// TODO Auto-generated method stub
 		String[] nameString = { "Ajay", "Vijay", "Jamil", "John" };
-		setPriority(1);
+//		setPriority(1);
 		try {
 			for (int i = 0; i < nameString.length; i++) {
 				System.out.print(nameString[i] + " ");
@@ -23,7 +23,7 @@ class Thr2 extends Thread {
 	public void run() {
 		// TODO Auto-generated method stub
 		String[] locations = { "India", "Russia", "Israel", "Japan" };
-		setPriority(10);
+//		setPriority(10);
 		try {
 			for (int i = 0; i < locations.length; i++) {
 				System.out.print(locations[i] + " ");
