@@ -20,17 +20,6 @@ public class SalesMain {
 		int ch = scanner.nextInt();
 		switch (ch) {
 		case 1: {
-//			System.out.println("Enter Id: ");
-//			int prdno = scanner.nextInt();
-//			System.out.println("Product Name: ");
-//			String pname = scanner.next();
-//			System.out.println("Cost: ");
-//			double cost = scanner.nextDouble();
-//			System.out.println("Quantity: ");
-//			int qty = scanner.nextInt();
-//			dao.addProduct(new Product(prdno, pname, cost, qty));
-//			System.out.println("PRoduct Added");
-
 			System.out.println("Enter Order No: ");
 			int ordno = scanner.nextInt();
 			System.out.println("Enter Product ID: ");
