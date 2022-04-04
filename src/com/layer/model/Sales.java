@@ -1,12 +1,10 @@
 package com.layer.model;
 
-import java.util.Date;
-
 public class Sales {
 	private int ordno;
 	private int prodid;
 	private int qtyRqrd;
-	private Date salesDate;
+	private String salesDate;
 	private double discount;
 	private double totalAmount;
 	private double payableAmount;
@@ -14,7 +12,7 @@ public class Sales {
 	public Sales() {
 	}
 
-	public Sales(int ordno, int prodid, int qtyRqrd, Date salesDate, double discount, double totalAmount,
+	public Sales(int ordno, int prodid, int qtyRqrd, String salesDate, double discount, double totalAmount,
 			double payableAmount) {
 		super();
 		this.ordno = ordno;
@@ -50,11 +48,11 @@ public class Sales {
 		this.qtyRqrd = qtyRqrd;
 	}
 
-	public Date getSalesDate() {
-		return salesDate;
+	public String getSalesDate() {
+		return salesDate.substring(0, 9);
 	}
 
-	public void setSalesDate(Date salesDate) {
+	public void setSalesDate(String salesDate) {
 		this.salesDate = salesDate;
 	}
 
