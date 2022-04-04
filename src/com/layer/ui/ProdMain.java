@@ -1,5 +1,6 @@
 package com.layer.ui;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import com.layer.dao.ProductDAOImpl;
@@ -36,10 +37,36 @@ public class ProdMain {
 			break;
 		}
 		case 3: {
+			ArrayList<Product> prds = dao.getProducts();
+			prds.stream().forEach(System.out::println);
+			break;
+		}
+		case 4: {
+			System.out.println("Enter Id: ");
+			int prdno = scanner.nextInt();
 
+			System.out.println("New Cost: ");
+			double cost = scanner.nextDouble();
+			dao.updateProdCost(prdno, cost);
+			break;
+		}
+		case 5: {
+			System.out.println("Enter Id: ");
+			int prdno = scanner.nextInt();
+
+			System.out.println("New Quantity: ");
+			int qty = scanner.nextInt();
+			dao.updateProdQty(prdno, qty);
+			break;
+		}
+		case 6: {
+			System.out.println("Enter Id: ");
+			int prdno = scanner.nextInt();
+			dao.deleteProduct(prdno);
+			break;
 		}
 		default:
-			throw new IllegalArgumentException("Unexpected value: " + ch);
+			System.exit(0);
 		}
 
 	}

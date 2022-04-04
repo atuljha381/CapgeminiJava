@@ -33,7 +33,7 @@ public class ProductDAOImpl implements IProductDAO {
 			pstmt.setString(2, product.getPrdname());
 			pstmt.setDouble(3, product.getCost());
 			pstmt.setInt(4, product.getQty());
-			pstmt.executeUpdate();
+			pstmt.execute();
 			System.out.println("Record Inserted");
 			flag = true;
 			return flag;
@@ -47,7 +47,7 @@ public class ProductDAOImpl implements IProductDAO {
 	public Product getProduct(int prdid) {
 		Product product = null;
 		try {
-			pstmt = conn.prepareStatement("select * from product where prodid=?");
+			pstmt = conn.prepareStatement("select * from product where prod_id=?");
 			pstmt.setInt(1, prdid);
 			result = pstmt.executeQuery();
 			result.next(); // load record in memory of runtime
@@ -63,7 +63,7 @@ public class ProductDAOImpl implements IProductDAO {
 		ArrayList<Product> products = new ArrayList<>();
 		Product product = null;
 		try {
-			pstmt = conn.prepareStatement("select * from product where prodid=?");
+			pstmt = conn.prepareStatement("select * from product");
 			result = pstmt.executeQuery();
 			while (result.next()) {
 				product = new Product(result.getInt(1), result.getString(2), result.getDouble(3), result.getInt(4));
@@ -83,7 +83,7 @@ public class ProductDAOImpl implements IProductDAO {
 		try {
 			product = getProduct(prdid);
 			product.setCost(cost);
-			pstmt = conn.prepareStatement("update product set cost=? where prodid=?");
+			pstmt = conn.prepareStatement("update product set cost=? where prod_id=?");
 			pstmt.setDouble(1, product.getCost());
 			pstmt.setInt(2, prdid);
 			conn.commit();
