@@ -2,11 +2,12 @@ package com.layer.service;
 
 import java.util.ArrayList;
 
+import com.layer.exception.NameLengthException;
 import com.layer.exception.ZeroInputException;
 import com.layer.model.Product;
 
 public interface IProductService {
-	boolean addProduct(Product product) throws ZeroInputException;
+	boolean addProduct(Product product) throws ZeroInputException, NameLengthException;
 
 	Product getProduct(int prdid) throws ZeroInputException;
 
