@@ -1,2 +1,4 @@
 2022-04-05 10:18:16,563 [main]  com.logger.ex1.log4Test1  - Denominator cannot be zero
 2022-04-05 10:18:16,563 [main]  com.logger.ex1.log4Test1  - Application Loaded
+2022-04-05 11:47:52,269 [main]  com.logger.ex1.log4Test1  - Denominator cannot be zero
+2022-04-05 11:47:52,270 [main]  com.logger.ex1.log4Test1  - Application Loaded
